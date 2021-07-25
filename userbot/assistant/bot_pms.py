@@ -109,7 +109,7 @@ async def bot_start(event):
                         \n\nPowered by [Catuserbot](https://t.me/catuserbot)"
         buttons = [
             (
-                Button.url("Join Here", "https://t.me/subin_works")
+                Button.url("Thank You", "https://t.me/DeepakV111")
             )
         ]
     else:
