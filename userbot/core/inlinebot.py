@@ -30,7 +30,7 @@ from .logger import logging
 LOGS = logging.getLogger(__name__)
 
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
-CATLOGO = "https://telegra.ph/file/5cbd5b11b370e7c52177a.jpg"
+CATLOGO = "https://telegra.ph/file/a9133676778e1f61286f7.jpg"
 tr = Config.COMMAND_HAND_LER
 
 
@@ -53,7 +53,7 @@ def ibuild_keyboard(buttons):
 
 
 def main_menu():
-    text = f"𝗖𝗮𝘁𝗨𝘀𝗲𝗿𝗯𝗼𝘁 𝗛𝗲𝗹𝗽𝗲𝗿\
+    text = f"𝙹𝚘𝚎𝚢'𝚜 𝚄𝚜𝚎𝚛𝚋𝚘𝚝 𝙷𝚎𝚕𝚙𝚎𝚛\
         \n𝗣𝗿𝗼𝘃𝗶𝗱𝗲𝗱 𝗯𝘆 {mention}"
     buttons = [
         (
@@ -506,7 +506,7 @@ async def inline_handler(event):  # sourcery no-metrics
     else:
         buttons = [
             (
-                Button.url("XTZ Bots", "https://t.me/subin_works")
+                Button.url("Joey", "https://t.me/DeepakV111")
             )
         ]
         markup = event.client.build_reply_markup(buttons)
@@ -521,7 +521,7 @@ async def inline_handler(event):  # sourcery no-metrics
             type="photo",
             title="Click Here",
             description="Hey No Dont Click Here",
-            url="https://t.me/subin_works",
+            url="https://t.me/DeepakV111",
             thumb=photo,
             content=photo,
             send_message=types.InputBotInlineMessageMediaAuto(
