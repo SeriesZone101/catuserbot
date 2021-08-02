@@ -11,7 +11,7 @@ from ..helpers.utils import _format
 from ..sql_helper import no_log_pms_sql
 from ..sql_helper.globals import addgvar, gvarstatus
 from . import BOTLOG, BOTLOG_CHATID
-from telethon import Button, events
+
 LOGS = logging.getLogger(__name__)
 
 plugin_category = "utils"
@@ -26,7 +26,8 @@ class LOG_CHATS:
 
 LOG_CHATS_ = LOG_CHATS()
 
-@catub.cat_cmd(events.MessageDeleted)
+
+@catub.cat_cmd(incoming=True, func=lambda e: e.is_private, edited=False, forword=None)
 async def monito_p_m_s(event):  # sourcery no-metrics
     if Config.PM_LOGGER_GROUP_ID == -100:
         return
@@ -65,7 +66,7 @@ async def monito_p_m_s(event):  # sourcery no-metrics
             except Exception as e:
                 LOGS.warn(str(e))
 
-#@catub.cat_cmd(events.MessageDeleted)
+
 @catub.cat_cmd(incoming=True, func=lambda e: e.mentioned, edited=False, forword=None)
 async def log_tagged_messages(event):
     hmm = await event.get_chat()
