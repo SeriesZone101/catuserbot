@@ -168,9 +168,14 @@ async def bot_pms(event):  # sourcery no-metrics
         if user_id is not None:
             try:
                 if event.media:
-                    msg = await event.client.send_file(
-                        user_id, event.media, caption=event.text, reply_to=reply_msg
-                    )
+                    if event.media.webpage:
+                        msg = await event.client.send_message(
+                            user_id, event.text, reply_to=reply_msg
+                            )
+                    else:
+                        msg = await event.client.send_file(
+                            user_id, event.media, caption=event.text, reply_to=reply_msg
+                            )
                 else:
                     msg = await event.client.send_message(
                         user_id, event.text, reply_to=reply_msg, link_preview=False
